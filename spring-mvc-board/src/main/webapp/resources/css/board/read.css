@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;/* border-style:solid; */border-bottom:solid;border-top:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;/* border-style:solid; */border-bottom:solid;border-top:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;align:center;}
+
+.sec_comment_recommand td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;/* border-style:solid; */border-bottom:solid;border-top:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;font-size:11px;}
+
+
+button{width:65px;height:25px;}
+
+
+#sec_comment_write{
+	 align:center; display:inline-block;
+}
+
+#sec_coomment_account{
+	float:left; width:120px; height:100px;
+}
+
+#userpw, #username{
+	width:100px; height:25px;
+}
+
+#sec_comment_input{
+	float:left;
+}
+
+#comment{
+	width:600px;height:80px;
+}
+
+#sec_comment_util{
+	float:right;
+}
+
+#btn_comment_submit{
+	width:65px;height:25px;
+}

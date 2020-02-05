@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+
+#nickname {width:380px;height:30px;font-size:18px;}
+#username {width:380px;height:30px;font-size:18px;}
+#password {width:380px;height:30px;font-size:18px;}
+#title {width:780px;height:30px;font-size:18px;}
+#content{width:780px;height:400px;resize:none;}
+
+.utilBtn{width:65px;height:25px;}

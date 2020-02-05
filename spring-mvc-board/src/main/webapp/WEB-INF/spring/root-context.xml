@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- DB 접속을 위한 DataSource Bean 생성 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- 데이터베이스 종류 -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<!-- 접속할 데이터베이스 경로 -->
+		<property name="url" value="jdbc:mysql://192.168.0.131:3306/spring_board?useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8"/>
+		<!-- 접속할 계정 이름 -->
+		<property name="username" value="kinggodhoon"/>
+		<!-- 접속할 계정 비밀번호 -->
+		<property name="password" value="Root**119"/>
+	</bean>
+	
+	<!-- 트랜잭션 관리를 위한 Bean 생성 -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    
+    <!-- 하이버네이트 사용 bean -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 설정 파일들을 등록하는 속성 -->
+		<property name="mappingResources">
+			<list>
+				<value>gmail/kinggodhoon/board/dao/member.hbm.xml</value>
+				<value>gmail/kinggodhoon/board/dao/board.hbm.xml</value>
+				<value>gmail/kinggodhoon/board/dao/post.hbm.xml</value>
+				<value>gmail/kinggodhoon/board/dao/comment.hbm.xml</value>
+			</list>
+		</property>
+		<!-- 데이터베이스 종류 등록 : 검색해서 설정 -->
+		<property name="hibernateProperties">
+				<value>
+					hibernate.dialect = org.hibernate.dialect.MySQLDialect
+				</value>
+		</property>
+	</bean>
+    
+    
+</beans>
