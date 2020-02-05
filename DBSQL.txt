@@ -1,0 +1,63 @@
+create database spring_board;
+
+use spring_board;
+
+CREATE TABLE member(
+	userid int(11) not NULL AUTO_INCREMENT PRIMARY KEY,
+	username char(20) not NULL UNIQUE,
+	password char(100) not null,
+	nickname char(20) not null UNIQUE,
+	regdate datetime DEFAULT NOW(),
+	isadmin bool DEFAULT false
+);
+
+CREATE TABLE board(
+	boardid int(11) PRIMARY KEY,
+	boardname char(100) not null
+);
+
+CREATE TABLE post(
+	postid int(11) not null AUTO_INCREMENT PRIMARY key,
+	boardid int(11) not null,
+	title char(100) not null,
+	content LONGTEXT not null,
+	views int(11) default 0,
+	recommand int(11) default 0,
+	posttime datetime default now(),
+	updatetime datetime default now(),
+	ismember bool default false,
+	username char(20) not null,
+	userpw char(100),
+	userip char(50),
+	FOREIGN key (boardid) REFERENCES board(boardid)
+);
+
+create table comment(
+	postid int(11),
+	content char(200) not null,
+	posttime datetime default now(),
+	ismember bool default false,
+	username char(20) not null,
+	userpw char(100),
+	userip char(50),
+	FOREIGN key (postid) REFERENCES post(postid)
+);
+
+select * from member;
+select * from board;
+select * from post;
+select * from comment;
+
+TRUNCATE member;
+
+SET FOREIGN_KEY_CHECKS = 0; 
+TRUNCATE table board; 
+SET FOREIGN_KEY_CHECKS = 1;
+
+SET FOREIGN_KEY_CHECKS = 0; 
+TRUNCATE table post; 
+SET FOREIGN_KEY_CHECKS = 1;
+
+drop table board;
+drop table post;
+drop table comment;
